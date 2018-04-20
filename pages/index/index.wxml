@@ -1,0 +1,30 @@
+<view class="weather-wrapper">
+  <view class="city">徐州</view>
+  <view class="temp">{{nowTemp}}</view>
+  <view class="weather">{{nowWeather}}</view>
+  <image class="weather-bg" src="{{nowWeatherBackground}}" mode="scaleToFill"></image>
+  <view class="day-weather" bindtap='onTapDayWeather'>
+    <view class="day-text">{{todayDate}}</view>
+    <view class="temp-text">{{todayTemp}}</view>
+    <image class="arrow-icon" src="/images/arrow.png"></image>
+  </view>
+</view>
+<view class="timetips">
+  <image class="timetips-icon" src="/images/time-icon.png"></image>
+  <view class="timetips-text">今日详细天气</view>
+</view>
+<scroll-view scroll-x>
+  <view class='forecast-list'>
+    <view class="forecast-item" >
+      <view class='forecast-time'>{{daily[0].date}}</view>
+      <image class='forecast-weather' src='{{daily[0].pathDay}}'>
+      </image>
+      <view class='forecast-temp'>白天 {{daily[0].text_day}} {{daily[0].high}}°</view>
+      <image class='forecast-weather' src='{{daily[0].pathNight}}'>
+      </image>
+      <view class='forecast-temp'>夜晚 {{daily[0].text_night}} {{daily[0].low}}°</view>
+       <view class='forecast-temp'>风向 {{daily[0].wind_direction}} </view>
+       <view class='forecast-temp'>风速 {{daily[0].wind_speed}}km/h </view>
+    </view>
+  </view>
+</scroll-view>

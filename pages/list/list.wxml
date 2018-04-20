@@ -1,0 +1,13 @@
+<scroll-view scroll-x>
+  <view class='forecast-list'>
+    <view class="forecast-item" wx:for="{{daily}}">
+      <view class='forecast-time'>{{item.date}}</view>
+      <image class='forecast-weather' src='{{item.pathDay}}'>
+      </image>
+      <view class='forecast-temp'>白天 {{item.text_day}} {{item.high}}°</view>
+      <image class='forecast-weather' src='{{item.pathNight}}'>
+      </image>
+      <view class='forecast-temp'>夜晚 {{item.text_night}} {{item.low}}°</view>
+    </view>
+  </view>
+</scroll-view>
